@@ -20,12 +20,18 @@
 
         // Implement a property TotalValue: the sum of 
         // the face values of the dice in the cup
-        //
-        // public int TotalValue
+        public int TotalValue
+        {
+            get { return _die1.FaceValue + _die1.FaceValue; }
+        }
 
 
         // Implement a method Shake: all the dice in the cup should be rolled
         //
-        // public void Shake()
+        public void Shake()
+        {
+            _die1.Roll();
+            _die2.Roll();
+        }
     }
 }
