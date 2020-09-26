@@ -7,9 +7,11 @@ namespace RolePlayV12
         public void MyCode()
         {
             // The FIRST line of code should be BELOW this line
+            Sword swordA = new Sword("MegaSword",1,300);
+            Sword swordB = new Sword("SuperSword", 1, 300);
 
-            Warrior warriorA = new Warrior("Ragnar", 200, 60);
-            Warrior warriorB = new Warrior("Lagertha", 240, 50);
+            Warrior warriorA = new Warrior("Ragnar", 200, swordA);
+            Warrior warriorB = new Warrior("Lagertha", 240, swordB);
 
             Console.WriteLine("Just after creation:");
             Console.WriteLine(warriorA.GetInfo());

@@ -7,19 +7,15 @@ namespace RolePlayV12
         #region Instance fields
         private string _name;
         private int _hitPoints;
-        private int _maxDamage;
-        private int _minDamage;
-        private Random _generator;
+        private Sword _sword1;
         #endregion
 
         #region Constructor
-        public Warrior(string name, int hitPoints, int maxDamage)
+        public Warrior(string name, int hitPoints, Sword sword1)
         {
             _name = name;
             _hitPoints = hitPoints;
-            _maxDamage = maxDamage;
-            _minDamage = _maxDamage / 4;
-            _generator = new Random(Guid.NewGuid().GetHashCode());
+            _sword1 = sword1;
         }
         #endregion
 
@@ -48,7 +44,7 @@ namespace RolePlayV12
 
         public int DealDamage()
         {
-            return _generator.Next(_minDamage, _maxDamage);
+            return _sword1.DealDamage();
         }
 
         public string GetInfo()
