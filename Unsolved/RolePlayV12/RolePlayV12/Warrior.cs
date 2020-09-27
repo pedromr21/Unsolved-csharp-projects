@@ -8,6 +8,7 @@ namespace RolePlayV12
         private string _name;
         private int _hitPoints;
         private Sword _sword1;
+        private Sword _sword2;
         #endregion
 
         #region Constructor
@@ -16,6 +17,7 @@ namespace RolePlayV12
             _name = name;
             _hitPoints = hitPoints;
             _sword1 = sword1;
+            
         }
         #endregion
 
@@ -24,6 +26,16 @@ namespace RolePlayV12
         {
             get { return _name; }
         }
+
+        public Sword Sword1
+        {
+            get { return _sword1; }
+        }
+        public Sword Sword2
+        {
+            get { return _sword2; }
+        }
+
 
         public int HitPoints
         {
