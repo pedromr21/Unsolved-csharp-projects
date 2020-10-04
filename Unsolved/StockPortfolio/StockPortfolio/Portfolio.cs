@@ -46,6 +46,9 @@
             get
             {
                 // Implement the property as described above...
+                double initalPrice = _stock1.InitialPrice + _stock2.InitialPrice + _stock3.InitialPrice;
+                double currentPrice = _stock1.CurrentPrice + _stock2.CurrentPrice + _stock3.CurrentPrice;
+
                 return 0.0;
             }
         }
