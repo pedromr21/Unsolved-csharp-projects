@@ -9,7 +9,7 @@ namespace StaticExamples
     /// </summary>
     public class ListMethods
     {
-        public int FindSmallestNumber(List<int> numbers)
+        public static int FindSmallestNumber(List<int> numbers)
         {
             if (numbers.Count == 0)
             {
@@ -29,7 +29,7 @@ namespace StaticExamples
             }
         }
 
-        public int FindAverage(List<int> numbers)
+        public static int FindAverage(List<int> numbers)
         {
             if (numbers.Count == 0)
             {

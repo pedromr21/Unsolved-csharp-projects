@@ -1,4 +1,6 @@
-﻿namespace StaticExamples
+﻿using System;
+
+namespace StaticExamples
 {
     /// <summary>
     /// A very simple representation of a car
@@ -8,6 +10,9 @@
         #region Instance fields
         private string _licensePlate;
         private int _price;
+        private static int _licenseCalls;
+        private static int _priceCalls;
+
         #endregion
 
         #region Constructor
@@ -21,15 +26,39 @@
         #region Properties
         public string LicensePlate
         {
-            get { return _licensePlate; }
-            set { _licensePlate = value; }
+            get
+            {
+                _licenseCalls++;
+                return _licensePlate;
+            }
+
+            set
+            {
+                _licenseCalls++;
+                _licensePlate = value;
+            }
         }
 
         public int Price
         {
-            get { return _price; }
-            set { _price = value; }
-        } 
+            get
+            {
+                _priceCalls++;
+                return _price;
+            }
+            set
+            {
+                _priceCalls++;
+                _price = value;
+            }
+        }
         #endregion
+
+        public static void PrintUsageStatistics()
+        {
+            Console.WriteLine($"The license property has been called {_licenseCalls} times");
+            Console.WriteLine($"The price property has ben called {_priceCalls} times");
+        }
     }
+
 }
