@@ -46,10 +46,19 @@
             get
             {
                 // Implement the property as described above...
-                double initalPrice = _stock1.InitialPrice + _stock2.InitialPrice + _stock3.InitialPrice;
-                double currentPrice = _stock1.CurrentPrice + _stock2.CurrentPrice + _stock3.CurrentPrice;
+                double initalPrice1 = _stock1.InitialPrice * _stock1.Amount;
+                double initalPrice2 = _stock2.InitialPrice * _stock2.Amount;
+                double initalPrice3 = _stock3.InitialPrice * _stock3.Amount;
+                double totalInitialPrice = initalPrice1 + initalPrice2 + initalPrice3;
 
-                return 0.0;
+                double currentPrice1 = _stock1.CurrentPrice * _stock1.CurrentPrice;
+                double currentPrice2 = _stock2.CurrentPrice * _stock2.CurrentPrice;
+                double currentPrice3 = _stock3.CurrentPrice * _stock3.CurrentPrice;
+                double totalCurrentPrice = currentPrice1 + currentPrice2 + currentPrice3;
+
+                double percentage = totalCurrentPrice - totalInitialPrice;
+
+                return (percentage * 100.0) / totalInitialPrice;
             }
         }
         #endregion
@@ -66,6 +75,9 @@
         public void UpdateCurrentPrices(double percent1, double percent2, double percent3)
         {
             // Implement the method as described above...
+            _stock1.CurrentPrice = CalculateNewPrice(_stock1.CurrentPrice, percent1);
+            _stock2.CurrentPrice = CalculateNewPrice(_stock2.CurrentPrice, percent2);
+            _stock3.CurrentPrice = CalculateNewPrice(_stock3.CurrentPrice, percent3);
         }
 
         /// <summary>
