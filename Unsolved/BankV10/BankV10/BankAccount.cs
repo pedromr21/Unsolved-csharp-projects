@@ -1,4 +1,6 @@
-﻿namespace BankV10
+﻿using System;
+
+namespace BankV10
 {
     public class BankAccount
     {
@@ -23,12 +25,24 @@
         #region Methods
         public void Deposit(double amount)
         {
-            _balance = _balance + amount;
+            if (amount > 0)
+            {
+                _balance = _balance + amount;
+            }else {
+                Console.WriteLine("Deposit is negative, not depositing anything");
+            }
         }
 
         public void Withdraw(double amount)
         {
-            _balance = _balance - amount;
+            if (_balance >= amount)
+            {
+                _balance = _balance - amount;
+            }
+            else
+            {
+                Console.WriteLine("You dont have enough funds to withdraw this amount");
+            }
         } 
         #endregion
     }
