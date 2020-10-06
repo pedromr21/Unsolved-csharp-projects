@@ -38,7 +38,7 @@ namespace ListBaseCamp
 
             listOfInt.Clear();
             listOfInt.Add(14);
-            listOfInt.Add(87);
+            listOfInt.Add(10);
             listOfInt.Add(62);
             listOfInt.Add(21);
             listOfInt.Add(40);
@@ -64,17 +64,17 @@ namespace ListBaseCamp
             // Case 7: Add code that finds the smallest  
             // element in the list, and prints the result
             // Tip: Think in detail about how you would do this manually
-            Console.WriteLine($"the smallest is {listOfInt.Min()}");
+           // Console.WriteLine($"the smallest is {listOfInt.Min()}");
 
-            double lowestInt = listOfInt[0];
+            int lowestInt = listOfInt[0];
             foreach (int a in listOfInt)
             {
-                if (a <= lowestInt)
+                if (a < lowestInt)
                 {
                     lowestInt = a;
-                    Console.WriteLine($"Lowest Int is {a}");
                 }
             }
+            Console.WriteLine($"the smallest is {lowestInt}");
 
 
             // [(maybe) DIFFICULT]
