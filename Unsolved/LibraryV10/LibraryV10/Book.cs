@@ -20,6 +20,7 @@
             _title = title;
             _author = author;
             _noOfPages = noOfPages;
+
         }
         #endregion
 
@@ -43,6 +44,7 @@
         {
             get { return _noOfPages; }
         }
+
         #endregion
     }
 }

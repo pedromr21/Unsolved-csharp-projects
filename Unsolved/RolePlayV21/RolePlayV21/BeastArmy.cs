@@ -26,8 +26,15 @@ namespace RolePlayV21
         {
             get
             {
-                return false; // TODO - implement as specified
-            } 
+                foreach (Beast aBeast in _army)
+                {
+                    if (!aBeast.Dead)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
         }
 
         /// <summary>
@@ -39,8 +46,13 @@ namespace RolePlayV21
             {
                 List<string> alive = new List<string>();
 
-                // TODO - implement as specified
-
+                foreach (Beast aBeast in _army)
+                {
+                    if (!aBeast.Dead)
+                    {
+                        alive.Add(aBeast.Name);
+                    }
+                }
                 return alive;
             }
         }
@@ -54,7 +66,15 @@ namespace RolePlayV21
         {
             int totalDamage = 0;
 
-            // TODO - implement as specified
+            foreach (Beast aBeast in _army)
+            {
+                if (!aBeast.Dead)
+                {
+
+                    return totalDamage + aBeast.DealDamage();
+                }
+            }
+
 
             return totalDamage;
         }
@@ -66,7 +86,13 @@ namespace RolePlayV21
         /// </summary>
         public void ReceiveDamage(int damage)
         {
-            // TODO - implement as specified
+            foreach (Beast aBeast in _army)
+            {
+                if (!aBeast.Dead)
+                {
+                    aBeast.ReceiveDamage(damage);
+                }
+            }
         }
     }
 }

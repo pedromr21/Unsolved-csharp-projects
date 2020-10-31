@@ -33,7 +33,7 @@ namespace LibraryV10
         /// </summary>
         public void AddBook(Book aBook)
         {
-            // TODO
+            _books.Add(aBook);
         }
 
         /// <summary>

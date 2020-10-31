@@ -13,7 +13,6 @@ namespace RolePlayV21
         {
             _generator = new Random();
         }
-
         /// <summary>
         /// Returns a random number in the interval between the values of 
         /// "min" and "max"
