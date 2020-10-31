@@ -1,35 +1,19 @@
 ﻿namespace EmployeesV10
 {
-    public class ITSupporter
+    public class ITSupporter : Employee
     {
         #region Instance fields
-        private string _name;
-        private int _hoursPerWeek;
         private string _primaryWorkArea;
         #endregion
 
         #region Constructor
-        public ITSupporter(string name, int hoursPerWeek, string primaryWorkArea)
+        public ITSupporter(string name, int hoursPerWeek, string primaryWorkArea) : base(name, hoursPerWeek)
         {
-            _name = name;
-            _hoursPerWeek = hoursPerWeek;
             _primaryWorkArea = primaryWorkArea;
         }
         #endregion
 
         #region Properties
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-
-        public int HoursPerWeek
-        {
-            get { return _hoursPerWeek; }
-            set { _hoursPerWeek = value; }
-        }
-
         public string PrimaryWorkArea
         {
             get { return _primaryWorkArea; }
