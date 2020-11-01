@@ -60,7 +60,7 @@ namespace WeaponShopV20
         /// Since the calculation uses random numbers, 
         /// it will not return the same value every time.
         /// </summary>
-        protected int CalculateDamage()
+        public virtual int DealDamage()
         {
             return RandomNumber(MinDamage, MaxDamage);
         } 

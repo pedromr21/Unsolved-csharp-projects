@@ -20,43 +20,33 @@ namespace WeaponShopV20
         private void TestWand()
         {
             Wand myWand = new Wand("Dragonhair");
-            UseWand(myWand, 5);
+            UseWeapon(myWand, 5);
 
             myWand.IsEnchanted = true;
             Console.WriteLine("Enchanted Wand...");
-            UseWand(myWand, 5);
+            UseWeapon(myWand, 5);
 
             myWand.IsEnchanted = false;
             Console.WriteLine("Disenchanted Wand...");
-            UseWand(myWand, 5);
+            UseWeapon(myWand, 5);
         }
 
         private void TestAxe()
         {
             Axe myAxe = new Axe("Redeemer");
-            UseAxe(myAxe, 10);
+            UseWeapon(myAxe, 10);
 
             myAxe.Sharpen();
             Console.WriteLine("Sharpened Axe...");
-            UseAxe(myAxe, 10);
+            UseWeapon(myAxe, 10);
         }
 
-        private void UseWand(Wand theWand, int noOfUses)
+        private void UseWeapon(Weapon theWeapon, int noOfUses)
         {
-            Console.WriteLine($"Testing Wand {theWand.Description}");
+            Console.WriteLine($"Testing Weapon {theWeapon.Description}");
             for (int i = 0; i < noOfUses; i++)
             {
-                Console.WriteLine($"Damage dealt by {theWand.Description}: {theWand.DamageFromWand()}");
-            }
-            Console.WriteLine();
-        }
-
-        private void UseAxe(Axe theAxe, int noOfUses)
-        {
-            Console.WriteLine($"Testing Axe {theAxe.Description}");
-            for (int i = 0; i < noOfUses; i++)
-            {
-                Console.WriteLine($"Damage dealt by {theAxe.Description}: {theAxe.DamageFromAxe()}");
+                Console.WriteLine($"Damage dealt by {theWeapon.Description}: {theWeapon.DealDamage()}");
             }
             Console.WriteLine();
         }

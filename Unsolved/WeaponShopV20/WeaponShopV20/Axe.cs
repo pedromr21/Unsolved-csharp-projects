@@ -20,9 +20,9 @@
         /// Returns the damage dealt by the Axe. Also lowers the
         /// minimum and maximum damage dealt by three points.
         /// </summary>
-        public int DamageFromAxe()
+        public override int DealDamage()
         {
-            int damage = CalculateDamage();
+            int damage = base.DealDamage();
 
             MinDamage = MinDamage < 3 ? 0 : MinDamage - 3;
             MaxDamage = MaxDamage < 3 ? 0 : MaxDamage - 3;

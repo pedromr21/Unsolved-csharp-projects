@@ -33,9 +33,9 @@
         /// Returns the damage dealt by the Wand. The damage
         /// is doubled if the wand is enchanted.
         /// </summary>
-        public int DamageFromWand()
+        public override int DealDamage()
         {
-            return CalculateDamage() * (IsEnchanted ? 2 : 1);
+            return base.DealDamage() * (IsEnchanted ? 2 : 1);
         } 
         #endregion
     }
