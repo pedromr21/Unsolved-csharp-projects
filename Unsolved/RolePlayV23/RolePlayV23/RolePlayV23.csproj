@@ -47,6 +47,7 @@
     <Compile Include="BattleLog.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterGroup.cs" />
+    <Compile Include="Defender.cs" />
     <Compile Include="InsertCodeHere.cs" />
     <Compile Include="NumberGenerator.cs" />
     <Compile Include="Program.cs" />
