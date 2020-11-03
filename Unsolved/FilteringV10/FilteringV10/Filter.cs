@@ -9,13 +9,14 @@ namespace FilteringV10
     /// </summary>
     public static class Filter
     {
-        public static List<int> FilterValues(List<int> values)
+        public static List<int> FilterValues(List<int> values, IFilterCondition filter)
         {
             List<int> filteredValues = new List<int>();
-
+            
+            
             foreach (var value in values)
             {
-                if (value > 10)
+                if (filter.Condition(value))
                 {
                     filteredValues.Add(value);
                 }
